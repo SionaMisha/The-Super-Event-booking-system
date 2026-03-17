@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           style="-fx-background-color: white;">
+           
+    <VBox spacing="20" style="-fx-background-color: white;">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="All Orders" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="backButton" text="Back to Dashboard" onAction="#handleBack"/>
+        </HBox>
+        
+        <!-- Orders Table -->
+        <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="orderIdColumn" text="Order ID" prefWidth="100"/>
+                <TableColumn fx:id="usernameColumn" text="Username" prefWidth="150"/>
+                <TableColumn fx:id="dateColumn" text="Order Date" prefWidth="200"/>
+                <TableColumn fx:id="totalColumn" text="Total" prefWidth="100"/>
+                <TableColumn fx:id="detailsColumn" text="Details" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+</StackPane> 

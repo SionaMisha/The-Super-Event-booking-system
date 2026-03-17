@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+           stylesheets="@/css/table-style.css" fx:id="rootPane">
+              
+    <!-- Background Image -->
+    <ImageView fx:id="bgImage" preserveRatio="false">
+        <image>
+            <Image url="@/assets/login_bg.jpg"/>
+        </image>
+    </ImageView>
+
+    <!-- Main Content -->
+    <VBox alignment="TOP_CENTER" spacing="15.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Label text="Admin Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="viewOrdersButton" text="View All Orders" 
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            <Button fx:id="logoutButton" text="Logout" 
+                    style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- Events Management -->
+        <TitledPane text="Events Management" expanded="true">
+            <VBox spacing="10">
+                <!-- Add Event Form -->
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Event Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <TextField fx:id="eventNameField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    
+                    <Label text="Venue:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <TextField fx:id="venueField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    
+                    <Label text="Day:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <ComboBox fx:id="dayComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    
+                    <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <TextField fx:id="priceField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                    
+                    <Label text="Capacity:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                    <TextField fx:id="capacityField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                    
+                    <Button fx:id="addEventButton" text="Add Event" 
+                            style="-fx-background-color: #2196F3; -fx-text-fill: white;"
+                            GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                </GridPane>
+
+                <!-- Events Table -->
+                <TableView fx:id="eventsTable" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="eventNameColumn" text="Event Name" prefWidth="200"/>
+                        <TableColumn fx:id="venueColumn" text="Venue" prefWidth="150"/>
+                        <TableColumn fx:id="dayColumn" text="Day" prefWidth="100"/>
+                        <TableColumn fx:id="priceColumn" text="Price" prefWidth="100"/>
+                        <TableColumn fx:id="capacityColumn" text="Capacity" prefWidth="100"/>
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                        <TableColumn fx:id="actionColumn" text="Actions" prefWidth="200"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </TitledPane>
+    </VBox>
+    <padding>
+      <Insets top="40" bottom="40" left="40" right="40" />
+   </padding>
+</StackPane> 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:id="rootPane">
+   <children>
+
+      <!-- Fullscreen Background Image Bound to StackPane Size -->
+      <ImageView fx:id="bgImage" preserveRatio="false">
+         <image>
+            <Image url="@/assets/login_bg.jpg" />
+         </image>
+      </ImageView>
+
+      <!-- Centered Login Panel -->
+      <VBox alignment="CENTER" spacing="12.0" maxWidth="400.0"
+            style="-fx-background-color: #F5F5DC; -fx-background-radius: 12; -fx-padding: 30;">
+         <children>
+            <Label text="Welcome to The Super Event"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: black;" />
+            <Label text="Login to your account"
+                   style="-fx-font-size: 14px; -fx-text-fill: black" />
+
+            <Label text="Username" style="-fx-text-fill: black" />
+            <TextField fx:id="name" maxWidth="250.0" />
+
+            <Label text="Password" style="-fx-text-fill: black" />
+            <PasswordField fx:id="password" maxWidth="250.0" />
+
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Button fx:id="login" text="Login" />
+                  <Button fx:id="signup" text="Signup" />
+               </children>
+            </HBox>
+
+            <Label fx:id="message"
+                   style="-fx-font-size: 14px; -fx-text-fill: red;" />
+         </children>
+      </VBox>
+
+   </children>
+   <padding>
+      <Insets top="40" bottom="40" left="40" right="40" />
+   </padding>
+</StackPane>

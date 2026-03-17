@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<StackPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@/css/table-style.css" fx:id="rootPane" style="-fx-padding: 30;">
+
+    <!-- Background Image -->
+    <ImageView fx:id="bgImage" preserveRatio="false">
+        <image>
+            <Image url="@/assets/login_bg.jpg" />
+        </image>
+    </ImageView>
+
+    <VBox spacing="40" alignment="CENTER" maxWidth="1000">
+    
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Your Orders" style="-fx-font-size: 30px; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+        <!-- Orders Summary Table -->
+        <TableView fx:id="ordersTable" prefWidth="900">
+            <columns>
+                <TableColumn fx:id="orderIdColumn" text="Order ID" prefWidth="200"/>
+                <TableColumn fx:id="orderDateColumn" text="Date" prefWidth="200"/>
+                <TableColumn fx:id="eventSummaryColumn" text="Events and Seats" />
+                <TableColumn fx:id="totalPriceColumn" text="Total" prefWidth="200"/>
+                <!--  <TableColumn fx:id="confirmationCodeColumn" text="Confirmation Code" prefWidth="150"/> -->
+            </columns>
+        </TableView>
+
+        <!-- Event Details Table 
+        <Label text="Order Details" style="-fx-font-size: 18px;" />
+        <TableView fx:id="orderItemsTable" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="eventNameColumn" text="Event Name" prefWidth="150"/>
+                <TableColumn fx:id="quantityColumn" text="Quantity" prefWidth="100"/>
+                <TableColumn fx:id="priceColumn" text="Price" prefWidth="100"/>
+                <TableColumn fx:id="totalColumn" text="Total" prefWidth="100"/>
+            </columns>
+        </TableView>-->
+
+        <!-- Buttons -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="exportButton" text="Export Orders" onAction="#handleExport"
+                    style="-fx-background-color: #457b9d; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button fx:id="backButton" text="Back" onAction="#handleBack"
+                    style="-fx-background-color: #1d3557; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </VBox>
+</StackPane>

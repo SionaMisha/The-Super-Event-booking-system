@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+           stylesheets="@/css/table-style.css" fx:id="rootPane">
+              
+    <!-- Background Image -->
+    <ImageView fx:id="bgImage" preserveRatio="false">
+        <image>
+            <Image url="@/assets/login_bg.jpg"/>
+        </image>
+    </ImageView>
+
+    <!-- Main Content -->
+    <VBox alignment="TOP_CENTER" spacing="15.0" maxWidth="900">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Label text="Order History" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="exportButton" text="Export Orders" 
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            <Button fx:id="backButton" text="Back to Events" 
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- Orders Table -->
+        <TableView fx:id="orderTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="orderIdColumn" text="Order #" prefWidth="100"/>
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="200"/>
+                <TableColumn fx:id="totalColumn" text="Total" prefWidth="100"/>
+                <TableColumn fx:id="confirmationCodeColumn" text="Confirmation Code" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </VBox>
+</StackPane> 

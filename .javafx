@@ -1,0 +1,5 @@
+# JavaFX Configuration
+# Replace these paths with your actual JavaFX SDK installation paths
+javafx.version=17
+javafx.sdk.path=C:/Program Files/Java/javafx-sdk-17
+javafx.modules=javafx.controls,javafx.fxml,javafx.graphics,javafx.base 
